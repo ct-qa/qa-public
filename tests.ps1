@@ -13,3 +13,4 @@ Check 'median even' (Get-Median @(4, 1, 3, 2)) 2.5
 Check 'max' (Get-Max @(3, -1, 7, 2)) 7
 if ($failed) { Write-Host "$failed failed"; exit 1 }
 Write-Host 'all passed'
+Write-Host 'tests finished'
