@@ -31,4 +31,4 @@ function Get-Median([double[]]$Values) {
     if ($sorted.Count % 2) { return $sorted[$mid] }
     return ($sorted[$mid - 1] + $sorted[$mid]) / 2
 }
-#
+# Get-Min returns the smallest value
