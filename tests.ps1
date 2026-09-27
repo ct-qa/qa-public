@@ -5,9 +5,11 @@ function Check($name, $actual, $expected) {
     else { Write-Host "ok   $name" }
 }
 Check 'sum' (Get-Sum @(1, 2, 3)) 6
+Check 'min' (Get-Min @(3, -1, 7, 2)) -1
 Check 'average' (Get-Average @(2, 4, 6)) 4
 Check 'average rounded' (Get-Average @(1, 2, 2)) 1.67
 Check 'median odd' (Get-Median @(5, 1, 3)) 3
 Check 'median even' (Get-Median @(4, 1, 3, 2)) 2.5
+Check 'max' (Get-Max @(3, -1, 7, 2)) 7
 if ($failed) { Write-Host "$failed failed"; exit 1 }
 Write-Host 'all passed'
