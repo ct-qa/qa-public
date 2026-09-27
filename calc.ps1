@@ -10,6 +10,16 @@ function Get-Min([double[]]$Values) {
     return $minimum
 }
 
+# Returns the largest value; throws on empty input.
+function Get-Max([double[]]$Values) {
+    if ($Values.Count -eq 0) { throw 'No values' }
+    $maximum = $Values[0]
+    foreach ($v in $Values) {
+        if ($v -gt $maximum) { $maximum = $v }
+    }
+    return $maximum
+}
+
 # Returns the total of all values; 0 for empty input.
 function Get-Sum([double[]]$Values) {
     $total = 0
@@ -31,4 +41,3 @@ function Get-Median([double[]]$Values) {
     if ($sorted.Count % 2) { return $sorted[$mid] }
     return ($sorted[$mid - 1] + $sorted[$mid]) / 2
 }
-# Get-Min returns the smallest value
